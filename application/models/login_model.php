@@ -57,13 +57,10 @@ public function profile(){
     public function check_login($sess){
 
            $sess = $this->session->userdata('user_sess');
-//
-//            $this->db->select('*');
-//            $this->db->from('users');
-//            $this->db->join('images','users.id = images.user_id');
+
 
             $this->db->where('users.user_sess',$sess);
-//            $this->db->where('images.status','profile');
+
             $query = $this->db->get('users');
             $user = $query->result_array();
 
